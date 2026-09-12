@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream End</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-accent: #00ff00;
+      --text-color: #ffffff;
+      --sub-text-color: #cccccc;
+      --neon-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5);
+      --inner-shadow-color: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+    .status-container {
+      text-align: center;
+      background: #0e0e0e !important;
+      padding: 35px 50px;
+      border-radius: 20px;
+      border: 2px solid var(--inner-shadow-color);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+      position: relative;
+      transform: scale(1.35);
+    }
+    .status-container::after {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      border: 2px solid var(--primary-accent);
+      border-radius: 25px;
+      box-shadow: var(--neon-shadow);
+      z-index: -1;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .header {
+      margin-bottom: 15px;
+    }
+    .header h1 {
+      font-size: 1.6em;
+      margin: 0;
+      color: var(--primary-accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--primary-accent);
+    }
+    .header p {
+      font-size: 0.8em;
+      color: var(--text-color);
+      margin: 4px 0 0 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+    .status-box {
+      font-weight: 700;
+      font-size: 2em;
+      color: var(--text-color);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      padding: 12px 30px;
+      display: inline-flex;
+      gap: 15px;
+      margin: 10px 0;
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .status-box::after {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      border: 2px solid var(--primary-accent);
+      border-radius: 12px;
+      box-shadow: var(--neon-shadow);
+      z-index: -1;
+      opacity: 0.6;
+    }
+    .subtext {
+      font-size: 0.95em;
+      color: var(--text-color);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="status-container">
+    <div class="header">
+      <h1>Jan Brunclík</h1>
+      <p>PRAŽSKÝ IRL SUBATHON</p>
+    </div>
+    <div class="status-box">
+      DÍKY ZA SLEDOVÁNÍ!
+    </div>
+    <div class="subtext">
+      STREAM JE PRO DNEŠEK U KONCE
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('cloud')) {
+      const header = document.querySelector('.header');
+      if (header) header.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
