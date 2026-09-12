@@ -161,6 +161,13 @@
   </div>
 
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('cloud')) {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.style.display = 'none';
+      }
+    }
     let totalSeconds = 15 * 60;
     const mEl = document.getElementById('minutes');
     const sEl = document.getElementById('seconds');
