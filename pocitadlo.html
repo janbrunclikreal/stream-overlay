@@ -27,16 +27,17 @@
       font-family: 'Montserrat', sans-serif;
       overflow: hidden;
     }
-    .countdown-container {
+   .countdown-container {
     text-align: center;
-    background: #0e0e0e; /* 100% neprůhledné, zakryje text pod tím */
+    background-color: #0e0e0e !important;
+    background: #0e0e0e !important;
     padding: 30px 45px;
     border-radius: 20px;
     border: 2px solid var(--inner-shadow-color);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
     position: relative;
-    transform: scale(1.35); /* Zvětší celou kartu o 35 % */
-    }
+    transform: scale(1.35);
+}
     .countdown-container::after {
       content: '';
       position: absolute;
